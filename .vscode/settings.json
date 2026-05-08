@@ -3,12 +3,12 @@
 
     "c-cpp-compile-run.c-compiler": "/opt/homebrew/bin/g++-15",
     "c-cpp-compile-run.cpp-compiler": "/opt/homebrew/bin/g++-15",
-    "c-cpp-compile-run.cpp-flags": "-Wall -Wextra -g3 -std=c++20",
+    "c-cpp-compile-run.cpp-flags": "-std=c++20 -O2 -Wall",
     "c-cpp-compile-run.save-before-compile": true,
-    "c-cpp-compile-run.output-location": "/Users/wens/Work/XCPC/output",
+    "c-cpp-compile-run.output-location": "${workspaceFolder}/output",
 
     "code-runner.executorMap": {
-        "cpp": "cd $dir && g++-15 -std=c++20 $fileName -o output/$fileNameWithoutExt && ./output/$fileNameWithoutExt"
+        "cpp": "cd $workspaceRoot && mkdir -p output/$(dirname $relFilePath) && g++-15 -std=c++20 -O2 -Wall $relFilePath -o output/${relFilePath%.cpp} && ./output/${relFilePath%.cpp}"
     },
     "code-runner.runInTerminal": true,
     "code-runner.saveFileBeforeRun": true
