@@ -1,0 +1,75 @@
+#include<bits/stdc++.h>
+#define N 500010
+using namespace std;
+typedef long long ll;
+inline ll read(){
+  ll x=0,w=0;char ch=0;
+  while(!isdigit(ch)){w|=ch=='-';ch=getchar();}
+  while(isdigit(ch)){x=(x<<3)+(x<<1)+(ch^'0');ch=getchar();}
+  return w?-x:x;
+}
+ll Max(ll a,ll b){return a>b?a:b;}
+ll Min(ll a,ll b){return a<b?a:b;}
+struct node{
+  ll bi,head,tail,lazy;
+}b[250];
+ll n,blo[N],a[N],block;
+int main(){
+  n=read();
+  block=sqrt(n);
+  blo[0]=-1;
+  for(int i=1;i<=n;++i){
+    a[i]=read();
+    blo[i]=i/block;
+    if(blo[i]!=blo[i-1]){
+      b[blo[i-1]].tail=i-1;
+      b[blo[i]].head=i;
+      b[blo[i]].bi=a[i];
+    }
+    b[blo[i]].bi=Max(b[blo[i]].bi,a[i]);
+  }
+  b[blo[n]].tail=n;
+  for(int i=1;i<=n;++i){
+    int opt=read(),l=read(),r=read(),c=read();
+    if(opt==0){
+      for(int j=l;j<=b[blo[l]].tail&&b[blo[l]].tail<r;++j){
+	a[j]+=c;
+	b[blo[l]].bi=Max(b[blo[l]].bi,a[j]);
+      }
+      for(int j=blo[l]+1;j<blo[r];++j){
+	b[j].lazy+=c;
+	b[j].bi+=c;
+      }
+      for(int j=Max(l,b[blo[r]].head);j<=r;++j){
+	a[j]+=c;
+        b[blo[r]].bi=Max(b[blo[r]].bi,a[j]);
+      }
+    }
+    if(opt==1){
+      int ans=0;
+      for(int j=b[blo[l]].head;j<=b[blo[l]].tail&&blo[l]<blo[r];++j){
+	a[j]+=b[blo[l]].lazy;
+	if(a[j]<c*c)++ans;
+      }
+      b[blo[l]].lazy=0;
+      for(int j=b[blo[r]].head;j<=b[blo[r]].tail;++j){
+	a[j]+=b[blo[r]].lazy;
+	if(a[j]<c*c)++ans;
+      }
+      b[blo[r]].lazy=0;
+      for(int j=blo[l]+1;j<blo[r];++j){
+	if(b[j].bi<c*c){
+	  ans+=block;
+	  continue;
+	}
+	for(int k=b[j].head;k<=b[j].tail;++k){
+	  a[k]+=b[j].lazy;
+	  if(a[k]<c*c)++ans;
+	}
+	b[j].lazy=0;
+      }
+      cout<<ans<<endl;
+    }
+  }
+  return 0;
+}

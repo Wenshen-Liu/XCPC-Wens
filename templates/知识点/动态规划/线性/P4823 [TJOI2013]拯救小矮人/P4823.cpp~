@@ -1,0 +1,30 @@
+#include<bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+const int Maxn=2e3+1;
+ll Max(ll a,ll b){return a>b?a:b;}
+ll n,h,f[Maxn],ans;
+struct node{
+	ll a,b;
+}dwarf[Maxn];
+bool cmp1(node x,node y){return x.a<y.b;}
+
+int main(){
+	scanf("%lld",&n);
+	for(int i=1;i<=n;++i){
+		scanf("%lld%lld",&dwarf[i].a,&dwarf[i].b);
+		f[0]+=dwarf[i].a;
+	}
+	scanf("%lld",&h);
+	sort(dwarf+1,dwarf+1+n,cmp1);
+	for(int i=1;i<=n;++i){
+		for(int j=n;j>=1;--j){
+			if(dwarf[i].b+f[j-1]>=h){
+				f[j]=Max(f[j],f[j-1]-dwarf[i].a);
+				ans=Max(ans,j);
+			}
+		}
+	}
+	printf("%lld\n",ans);
+	return 0;
+}

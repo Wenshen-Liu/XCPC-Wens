@@ -1,0 +1,61 @@
+格式：
+题目名 [估算难度评级] 来源
+难度评级：5-联赛 6-联赛+ 7-省选 8-省选+/NOI 9-NOI+
+
+杨表题 [6] 20200519联测 T2
+城堡 [6] CF101D
+看起来很简单的题 [7] BalticOI2018D1T3 Subtask1
+Calculation [7] 20200811联测 T2（NFLSOJ 无）
+
+斐波那契图 [5] CF232C
+挑战背包 [6] CF981E
+经典序列题 [8] WC2021联测 Round4 T2
+经典子序列题 [7] https://yhx-12243.github.io/OI-transit/records/soj134.html
+树 [6] https://yhx-12243.github.io/OI-transit/records/soj175.html
+博弈论 [7] Codechef MDSWIN2
+
+orzlxl [6] 2020ECFinal G
+排列计数 [6/8] CF1175F
+据说是 CC 题 [6/7] 没找到 source，大家可以去 CC 找一下
+线路规划 [7] https://ac.nowcoder.com/acm/problem/14419
+确实是 CC 题 [7] Codechef EXPREP
+
+超级大暴力 [5] THUPC2021 K
+LCM [7] Luogu P5616
+选点 [7] CF736D
+递推 [6] CF1106F
+
+管道取珠 [7] THUPC2021 E
+看起来是字符串题 [6] CF1142D
+不是字符串题 [7] JLOI2015 战争调度
+血压升高 [6] HDU6764
+这是模板题吗？ [6] CF932F
+AKIOI [7] IOI2014 Holiday
+分割矩阵 [7] AGC033D
+
+过山车 [7] 2020集训队联测 Day5 T2
+Review [7] CF903G
+不真实的问题 [7] Codechef NRWP
+玄学 [7] CF1473F
+非确定机 [7] CF1416F
+
+刺杀行动 [6] WorldFinal2014 F
+开火车 [7] CF1137E
+凸包计数 [8] 20200615校内测试 T2
+圆覆盖 [7] WorldFinal2018 G
+
+艺术就是爆炸 [6] XXI Opencup Eurasia 3（有修改）
+群论题 [7] CF1229D
+点集闭包 [7] XXI Opencup SPb C
+因为太模板所以没有来源 [6] 如题
+等腰直角三角形 [6] Codechef PAINTERP
+
+一看就是多合一 [6] Codechef CHEFSUMS
+网格题 [7] XXI Opencup SPb G
+强联通 [7] UOJ37
+座位分配 [8] CF1439D
+？ [5] kattis kingscolors
+
+又一个博弈论 [7] 清华集训 2016 Day1T1
+凸包 [8] Luogu P5114
+看起来很模板的题 [7] CF418D

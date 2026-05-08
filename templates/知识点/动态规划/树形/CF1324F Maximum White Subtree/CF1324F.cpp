@@ -1,0 +1,83 @@
+#include <cstdio>
+#include <cctype>
+using namespace std;
+
+const int Maxn=2e5+1;
+
+inline int read(){
+	int x=0;bool w=0;char ch=0;
+	while(!isdigit(ch)){w|=ch=='-';ch=getchar();}
+	while(isdigit(ch)){x=(x<<1)+(x<<3)+(ch^48);ch=getchar();}
+	return w?-x:x;
+}
+inline void write(int x){
+	if(x<0){x=-x;putchar('-');}
+	if(x>9)write(x/10);
+	putchar(x%10+48);
+	return ;
+}
+
+int Max(int a,int b){return a>b?a:b;}
+
+int n;
+int a[Maxn];
+int nxt[Maxn<<1],head[Maxn],to[Maxn<<1],cnt;
+int f1[Maxn],f2[Maxn];
+
+void add(int u,int v){
+	++cnt;
+	to[cnt]=v;
+	nxt[cnt]=head[u];
+	head[u]=cnt;
+	return ;
+}
+
+void dfs1(int u,int fa){
+	for(int i=head[u];i;i=nxt[i]){
+		int v=to[i];
+		if(v==fa)continue;
+		dfs1(v,u);
+		if(f1[v]>0)f1[u]+=f1[v];
+	}
+	return ;
+}
+
+void dfs2(int u,int fa){
+	for(int i=head[u];i;i=nxt[i]){
+		int v=to[i];
+		if(v==fa)continue;
+		f2[v]=f1[u]+f2[u];
+		if(f1[v]>0)f2[v]-=f1[v];
+		if(f2[v]<0)f2[v]=0;
+		dfs2(v,u);
+	}
+	return ;
+}
+
+int main(){
+	//freopen("1.in","r",stdin);
+	n=read();
+	for(int i=1;i<=n;++i){
+		a[i]=read();
+		if(a[i])f1[i]=1;
+		else f1[i]=-1;
+	}
+	for(int i=1;i<=n-1;++i){
+		int u=read(),v=read();
+		add(u,v);
+		add(v,u);
+	}
+	dfs1(1,0);
+	dfs2(1,0);
+	/*
+	for(int i=1;i<=n;++i){
+		printf("%d %d\n",f1[i],f2[i]);
+	}
+	*/
+	for(int i=1;i<=n;++i){
+		write(f1[i]+f2[i]);
+		putchar(' ');
+	}
+	putchar('\n');
+	return 0;
+}

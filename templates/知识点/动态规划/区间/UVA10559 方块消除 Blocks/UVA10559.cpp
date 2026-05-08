@@ -1,0 +1,47 @@
+#include<bits/stdc++.h>
+#define Maxn 201
+using namespace std;
+
+inline int read(){
+  int x=0,w=0;char ch=0;
+  while(ch<'0'||ch>'9'){w|=ch=='-';ch=getchar();}
+  while(ch>='0'&&ch<='9'){x=(x<<3)+(x<<1)+(ch^48);ch=getchar();}
+  return w?-x:x;
+}
+
+int Max(int a,int b){return a>b?a:b;}
+
+int n,color[Maxn],nxt[Maxn],cnt,last[Maxn];
+int dp[Maxn][Maxn][Maxn];
+
+int dfs(int l,int r,int k){
+  if(dp[l][r][k])return dp[l][r][k];
+  if(l>r)return 0;
+  if(l==r)return (k+1)*(k+1);
+  dp[l][r][k]=dfs(l,r-1,0)+(k+1)*(k+1);
+  for(int i=nxt[r];i>=l;i=nxt[i]){
+    dp[l][r][k]=Max(dp[l][r][k],dfs(l,i,k+1)+dfs(i+1,r-1,0));
+  }
+  return dp[l][r][k];
+}
+  
+int main(){
+  int T=read();
+  for(int cas=1;cas<=T;++cas){
+    memset(dp,0,sizeof(dp));
+    memset(last,0,sizeof(last));
+    memset(nxt,0,sizeof(nxt));
+    n=read();
+    for(int i=1;i<=n;++i){
+      color[i]=read();
+      nxt[i]=last[color[i]];
+      last[color[i]]=i;
+    }
+    printf("Case %d: %d\n",cas,dfs(1,n,0));
+  }
+  return 0;
+}
+/*
+9
+1 2 2 2 2 3 3 3 1
+*/

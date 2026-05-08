@@ -1,0 +1,23 @@
+最短路：
+    简单：
+        Bzoj4152 The Captain 优化连边
+        bzoj4289 tax 优化连边
+        noi2020美食家 矩阵优化最短路
+    差分约束：241e flights
+    较难：
+       「LibreOJ β Round #7」网格图
+
+最小生成树：
+简单：
+Bzoj Kuglarz 
+还行：
+Atcoder 3611 Tree Mst
+
+2-sat：[LOJ6036] 编码
+欧拉回路：Codeforces 429E Points and Segments
+
+cf1336f 树上统计贡献的经典题
+cf1338e 竞赛图，图分析
+agc blackout
+Codechef：Querying on a Grid
+[BZOJ4331] 越狱老虎桥

@@ -1,0 +1,26 @@
+# Compiled output
+output/
+**/output/
+
+# Debug symbol files
+*.dSYM
+*.dSYM/
+
+# Object files
+*.o
+*.exe
+*.out
+
+# OS files
+.DS_Store
+
+# Editor backups
+zcopy.cpp
+*zcopy*
+
+# IDE config (keep root .vscode)
+**/.vscode/
+!.vscode/
+
+# Large PDFs (tracked via Git LFS or external storage)
+references/**/*.pdf

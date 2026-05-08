@@ -1,0 +1,23 @@
+简单题：
+luoguP1365 WJMZBMR打osu! / Easy ：理解期望，与期望的线性性。
+
+还行题：
+luogu4223:期望逆序对
+cf1236f 考察期望线性性
+luogu3600 随机数生成器
+
+难题：agc034f 建议看wxh博客 https://blog.csdn.net/wxh010910/article/details/91049414
+uoj211 逃跑
+
+随机游走：
+P5643 [PKUWC2018]随机游走
+ [NOI2012] 迷失游乐园 基环树的随机游走
+
+赌徒问题：
+CatsOnTheCircle (SRM 667)
+夹克赌坊 (51nod 1653)
+
+偏序树，随机变量：
+「JOISC 2018 Day 2」修行
+[ZJOI2015]地震后的幻想乡 
+uoj593 新年的军队，非常难

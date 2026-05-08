@@ -1,0 +1,50 @@
+#include<bits/stdc++.h>
+const int Maxn=1e5+1;
+using namespace std;
+
+inline int read(){
+	int x=0;bool w=0;char ch=0;
+	while(!isdigit(ch)){w|=ch=='-';ch=getchar();}
+	while(isdigit(ch)){x=(x<<1)+(x<<3)+(ch^48);ch=getchar();}
+	return w?-x:x;
+}
+
+inline void write(int x){
+	if(x<0){x=-x;putchar('-');}
+	if(x>9)write(x/10);
+	putchar(x%10+48);
+	return ;
+}
+int n,cnt,tot;
+int pos[Maxn];
+
+struct AC{
+	int end,ch[26];
+
+void build(string s){
+	int u=0,len=s.length();
+	for(int i=0;i<len;++i){
+		if(ac[u].ch[s[i]-'a']==0)ac[u].ch[s[i]-'a']=++cnt;
+		u=ac[u].ch[s[i]-'a'];
+	}
+	pos[++tot]=u;
+	return ;
+}
+
+void Init(){
+	int len=-1;
+	char ch=0;
+	string S;
+	while(ch<'a'&&ch>'z'&&ch!='B'&&ch!='P')ch=getchar();
+	while((ch>='a'&&ch<='z')||ch=='B'||ch=='P'){
+		if(ch=='P')build(S);
+		if(ch=='B'&&len>=0)--len;
+		if(ch>='a'&&ch<='z')S[++len]=ch;
+	}
+	return ;
+}
+
+int main(){
+	Init();
+	return 0;
+}
