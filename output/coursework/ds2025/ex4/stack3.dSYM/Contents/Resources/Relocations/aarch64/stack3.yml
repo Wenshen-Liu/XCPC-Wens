@@ -1,0 +1,11 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/wens/Work/XCPC/output/coursework/ds2025/ex4/stack3'
+relocations:
+  - { offset: 0x19, size: 0x8, addend: 0x0, symName: __Z12getFuncIndexPc, symObjAddr: 0x0, symBinAddr: 0x100000650, symSize: 0xE0 }
+  - { offset: 0x7C3, size: 0x8, addend: 0x0, symName: _funcs, symObjAddr: 0x1D7C, symBinAddr: 0x100008000, symSize: 0x0 }
+  - { offset: 0x7D9, size: 0x8, addend: 0x0, symName: _funcTotal, symObjAddr: 0x79AC, symBinAddr: 0x10000DC30, symSize: 0x0 }
+  - { offset: 0x7ED, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x208, symBinAddr: 0x100000858, symSize: 0x254 }
+  - { offset: 0x8B9, size: 0x8, addend: 0x0, symName: __Z9addCalleeiPc, symObjAddr: 0xE0, symBinAddr: 0x100000730, symSize: 0x128 }
+  - { offset: 0x90F, size: 0x8, addend: 0x0, symName: __Z12getFuncIndexPc, symObjAddr: 0x0, symBinAddr: 0x100000650, symSize: 0xE0 }
+...
